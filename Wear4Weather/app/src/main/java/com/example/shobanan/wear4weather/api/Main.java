@@ -43,10 +43,7 @@ public class Main {
 
     public String getTemp_min() {
 
-        if(StringUtils.isNotBlank(temp_min)){
-            return temp_min + "°F";
-        }
-        return "N/A";
+        return temp_min;
     }
 
     public void setTemp_min(String temp_min) {
@@ -55,10 +52,7 @@ public class Main {
 
     public String getTemp_max() {
 
-        if(StringUtils.isNotBlank(temp_max)){
-            return temp_max + "°F";
-        }
-        return "N/A";
+        return temp_max;
 
     }
 

@@ -16,7 +16,7 @@
     <string name="wind_display">Wind:</string>
 
 
-    <string name="enter_zipcode">Enter Zipcode</string>
+    <string name="enter_zipcode">Enter City or Zipcode</string>
     <string name="description">n/a</string>
     <string name="temp_min">Min</string>
     <string name="temp_max">Max</string>

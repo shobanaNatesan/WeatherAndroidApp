@@ -6,18 +6,6 @@ import org.apache.commons.lang3.StringUtils;
 
 public class Main {
 
-    public String getTemp() {
-
-        if(StringUtils.isNotBlank(temp))
-        {
-            return temp + "°F";
-        }
-        return "N/A";
-    }
-
-    public void setTemp(String temp) {
-        this.temp = temp;
-    }
 
     public String getPressure() {
 
@@ -41,29 +29,38 @@ public class Main {
         this.humidity = humidity;
     }
 
-    public String getTemp_min() {
 
-        return temp_min;
+
+    public Double getTemp() {
+        return temp;
     }
 
-    public void setTemp_min(String temp_min) {
-        this.temp_min = temp_min;
-    }
-
-    public String getTemp_max() {
-
+    public Double getTemp_max() {
         return temp_max;
-
     }
 
-    public void setTemp_max(String temp_max) {
+    public void setTemp_max(Double temp_max) {
         this.temp_max = temp_max;
     }
 
-    private String temp;
+    public void setTemp(Double temp) {
+        this.temp = temp;
+    }
+
+
+
+    public Double getTemp_min() {
+        return temp_min;
+    }
+
+    public void setTemp_min(Double temp_min) {
+        this.temp_min = temp_min;
+    }
+
+    private Double temp;
     private String pressure;
     private String humidity;
-    private String temp_min;
-    private String temp_max;
+    private Double temp_min;
+    private Double temp_max;
 
 }

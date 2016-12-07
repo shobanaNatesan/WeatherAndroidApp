@@ -225,10 +225,10 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
 
         textViewLocation.setText(objCurrentWeather.getName()+","+objCurrentWeather.getSys().getCountry());
         textViweDate.setText(Util.getTodayDateInStringFormat());
-        textViewCurrenttemp.setText(objCurrentWeather.getMain().getTemp());
+        textViewCurrenttemp.setText(objCurrentWeather.getMain().getTemp().intValue()+"°F");
         textViewDescription.setText(Util.camelCase(objCurrentWeather.getWeather().get(0).getDescription()));
-        textViewMintemp.setText(objCurrentWeather.getMain().getTemp_min()+"°F");
-        textViewMaxtemp.setText(objCurrentWeather.getMain().getTemp_max()+"°F");
+        textViewMintemp.setText(objCurrentWeather.getMain().getTemp_min().intValue()+"°F");
+        textViewMaxtemp.setText(objCurrentWeather.getMain().getTemp_max().intValue()+"°F");
         textViewWindspeed.setText(objCurrentWeather.getWind().getSpeed());
         textViewHumiditypercent.setText(objCurrentWeather.getMain().getHumidity());
         String icode = Util.getIcon(objCurrentWeather);

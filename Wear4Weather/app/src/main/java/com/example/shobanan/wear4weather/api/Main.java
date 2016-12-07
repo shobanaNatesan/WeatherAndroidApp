@@ -1,5 +1,7 @@
 package com.example.shobanan.wear4weather.api;
 
+import org.apache.commons.lang3.StringUtils;
+
 /**
  * Created by Kannan.Velusamy on 12/3/2016.
  */
@@ -42,7 +44,10 @@ public class Main {
     }
 
     public String getHumidity() {
-        return humidity;
+        if(StringUtils.isNotBlank(humidity)){
+            return humidity+"%";
+        }
+        return "N/A";
     }
 
     public void setHumidity(String humidity) {

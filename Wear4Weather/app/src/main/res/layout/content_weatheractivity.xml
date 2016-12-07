@@ -16,7 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/enter_zipcode"
-            android:id="@+id/edtT_zipcode"/>
+            android:id="@+id/edtT_zipcode"
+            />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,7 +26,36 @@
             android:background="#00000000"
             />
 
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wind_display"
+            android:layout_marginLeft="15dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wind_speed"
+            android:id="@+id/txt_windspeed"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Humidity_display"
+            android:layout_marginLeft="170dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/humidity_percent"
+            android:id="@+id/txt_humiditypercent"/>
     </LinearLayout>
 
     <LinearLayout
@@ -91,13 +121,13 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical" android:layout_marginLeft="30dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/temp_min"
-            android:textSize="30sp"
+            android:textSize="25sp"
             android:layout_gravity="center_horizontal"/>
 
 
@@ -105,7 +135,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/cloud_percent"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:id="@+id/txt_tempmin"
             android:layout_gravity="center_horizontal"
             />
@@ -117,13 +147,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginLeft="175dp">
+        android:layout_marginLeft="150dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/temp_max"
-            android:textSize="30sp"
+            android:textSize="25sp"
             android:layout_gravity="center_horizontal"
             />
 
@@ -132,43 +162,12 @@
             android:layout_height="wrap_content"
             android:text="@string/humidity_percent"
             android:id="@+id/txt_tempmax"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:layout_gravity="center_horizontal"/>
 
     </LinearLayout>
 </LinearLayout>
 
-
-
-
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/wind_display"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/wind_speed"
-            android:id="@+id/txt_windspeed"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Humidity_display"
-            android:layout_marginLeft="150dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/humidity_percent"
-            android:id="@+id/txt_humiditypercent"/>
-    </LinearLayout>
 
     <ImageView
         android:layout_width="100dp"
@@ -176,4 +175,6 @@
         android:layout_marginTop="50dp"
         android:layout_gravity="center_horizontal"
         android:id="@+id/img_wear"/>
+
+
 </LinearLayout>

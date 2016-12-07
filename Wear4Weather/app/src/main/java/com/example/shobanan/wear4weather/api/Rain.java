@@ -1,8 +1,5 @@
 package com.example.shobanan.wear4weather.api;
 
-/**
- * Created by Shobana on 12/3/2016.
- */
 
 
 public class Rain {

@@ -2,40 +2,26 @@ package com.example.shobanan.wear4weather.api;
 
 import org.apache.commons.lang3.StringUtils;
 
-/**
- * Created by Kannan.Velusamy on 12/3/2016.
- */
+
 
 public class Main {
 
     public String getTemp() {
-        return temp;
+
+        if(StringUtils.isNotBlank(temp))
+        {
+            return temp + "°F";
+        }
+        return "N/A";
     }
 
     public void setTemp(String temp) {
-
-
-
-        String tempF = "";
-        double F = 0;
-        int K = 0;
-
-        K = Integer.parseInt(temp);
-
-        F = 1.8 * ( K - 273) + 32;
-
-        tempF = Double.toString(F);
-
-        this.temp = tempF;
-
-
-
-
-
-
+        this.temp = temp;
     }
 
     public String getPressure() {
+
+
         return pressure;
     }
 
@@ -44,7 +30,8 @@ public class Main {
     }
 
     public String getHumidity() {
-        if(StringUtils.isNotBlank(humidity)){
+
+        if(StringUtils.isNotEmpty(humidity)){
             return humidity+"%";
         }
         return "N/A";
@@ -55,7 +42,11 @@ public class Main {
     }
 
     public String getTemp_min() {
-        return temp_min;
+
+        if(StringUtils.isNotBlank(temp_min)){
+            return temp_min + "°F";
+        }
+        return "N/A";
     }
 
     public void setTemp_min(String temp_min) {
@@ -63,7 +54,12 @@ public class Main {
     }
 
     public String getTemp_max() {
-        return temp_max;
+
+        if(StringUtils.isNotBlank(temp_max)){
+            return temp_max + "°F";
+        }
+        return "N/A";
+
     }
 
     public void setTemp_max(String temp_max) {

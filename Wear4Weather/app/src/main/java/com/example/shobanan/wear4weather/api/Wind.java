@@ -1,13 +1,16 @@
 package com.example.shobanan.wear4weather.api;
 
-/**
- * Created by Kannan.Velusamy on 12/3/2016.
- */
+
+import org.apache.commons.lang3.StringUtils;
 
 public class Wind {
 
     public String getSpeed() {
-        return speed;
+
+        if(StringUtils.isNotBlank(speed)){
+            return speed + "mph";
+        }
+        return "N/A";
     }
 
     public void setSpeed(String speed) {

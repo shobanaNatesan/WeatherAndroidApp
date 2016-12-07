@@ -1,24 +1,23 @@
 <resources>
     <string name="app_name">Wear4Weather</string>
-    <string name="location_name">Portland,US</string>
+    <string name="location_name">N/A</string>
 
 
-    <string name="today_date">Sat ,3 Dec</string>
+    <string name="today_date">n/a</string>
 
-    <string name="cloud_percent">75%</string>
-    <string name="humidity_percent">70%</string>
-    <string name="wind_speed">7 mpH</string>
-    <string name="rain_volume">3 inch</string>
-    <string name="current_temperature">47°</string>
-    <string name="cloud_display">Cloud:</string>
-    <string name="Humidity_display">Humidity</string>
-    <string name="rain_display">Rain:</string>
+
+    <string name="humidity_percent">n/a</string>
+    <string name="wind_speed">n/a</string>
+
+    <string name="current_temperature">N/A</string>
+
+    <string name="Humidity_display">Humidity:</string>
+
     <string name="wind_display">Wind:</string>
-    <string name="current_location">Current Location</string>
-    <string name="string_choose">OR</string>
-    <string name="string_submit">SUBMIT</string>
+
+
     <string name="enter_zipcode">Enter Zipcode</string>
-    <string name="description">Description</string>
+    <string name="description">n/a</string>
     <string name="temp_min">Min</string>
     <string name="temp_max">Max</string>
     <string name="for_search">Search</string>

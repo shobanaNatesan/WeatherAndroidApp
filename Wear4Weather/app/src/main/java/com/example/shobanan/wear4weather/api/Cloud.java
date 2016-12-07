@@ -1,14 +1,19 @@
 package com.example.shobanan.wear4weather.api;
 
-/**
- * Created by Kannan.Velusamy on 12/3/2016.
- */
+
 
 public class Cloud {
+
+    /**
+     * @return cloud information
+     */
     public String getAll() {
         return all;
     }
 
+    /**
+     * @param all to set (in percentage)
+     */
     public void setAll(String all) {
         this.all = all;
     }

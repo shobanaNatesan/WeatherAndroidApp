@@ -10,6 +10,4 @@ public class ErrorUtil {
     public static  final String SERVICE_ERROR = "Service Error, weather is not available, Check back Later";
 
 
-
-
 }

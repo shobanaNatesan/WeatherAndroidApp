@@ -1,8 +1,7 @@
 package com.example.shobanan.wear4weather.api;
 
-/**
- * Created by Kannan.Velusamy on 12/3/2016.
- */
+
+import org.apache.commons.lang3.StringUtils;
 
 public class WeatherDetail {
 
@@ -13,6 +12,14 @@ public class WeatherDetail {
     private String description;
 
     private String icon;
+
+    /**
+     *
+     *  weather (more info Weather condition codes)
+     *  weather.id Weather condition id
+     *  weather.main Group of weather parameters (Rain, Snow, Extreme etc.)
+     *  weather.description Weather condition within the group
+     *  weather.icon Weather icon id */
 
     public WeatherDetail(String icon, String description, String main, String id) {
         this.icon = icon;
@@ -30,7 +37,10 @@ public class WeatherDetail {
     }
 
     public String getDescription() {
-        return description;
+        if (StringUtils.isNotBlank(description)) {
+            return description;
+        }
+        return "N/A";
     }
 
     public String getIcon() {

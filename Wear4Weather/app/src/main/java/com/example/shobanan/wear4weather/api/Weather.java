@@ -1,8 +1,6 @@
 package com.example.shobanan.wear4weather.api;
 
-/**
- * Created by Shobana Natesan on 12/3/2016.
- */
+
 
 public class Weather {
 

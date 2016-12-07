@@ -1,28 +1,18 @@
 package com.example.shobanan.wear4weather.common;
 
-import android.app.Service;
-import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.location.Location;
-import android.location.LocationManager;
 import android.support.annotation.NonNull;
-import android.util.Base64;
 import android.util.Log;
-import android.widget.EditText;
-import android.widget.Toast;
-
-import com.example.shobanan.wear4weather.R;
-import com.example.shobanan.wear4weather.WeatherActivity;
 import com.example.shobanan.wear4weather.api.CurrentWeather;
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Locale;
-import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+
+/**
+ *  Utility class maintains all reusable functions.
+ *  */
 
 public class Util {
 
@@ -50,7 +40,7 @@ public class Util {
     }
 
     /**
-     *
+     * Given latitude and longitude ,will return coordendpoit.
      * @param latitude
      * @param longitude
      * @return String
@@ -69,7 +59,7 @@ public class Util {
     }
 
     /**
-     *
+     * Given Zipcode,will return zipodeendpiont
      * @param zipcode
      * @return String
      */
@@ -78,7 +68,21 @@ public class Util {
         return zipcodeendpoint;
     }
 
+    /**
+     * Given city,will return zipodeendpiont
+     * @param city
+     * @return String
+     */
+    public static String getCityEndpoint(@NonNull String city){
+        String cityendpoint = "http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+API_KEY+"&units=imperial";
+        return cityendpoint;
+    }
 
+
+    /**
+     *
+     * @return String with date format as Day, date Month (Web, 7 Dec)
+     */
     public static String getTodayDateInStringFormat(){
         try {
             Calendar c = Calendar.getInstance();
@@ -91,6 +95,11 @@ public class Util {
 
     }
 
+
+    /**
+     * @param original
+     * @return String - convert the given string to camelCase sentence
+     */
     public static String camelCase(@NonNull String original) {
         if (original.length() == 0) {
             return "";
@@ -98,122 +107,18 @@ public class Util {
         return original.substring(0, 1).toUpperCase() + original.substring(1);
     }
 
-
-    public static String getLocation(@NonNull CurrentWeather objCurrentWeather){
-
-        String location;
-
-        if(objCurrentWeather.getName() != null && objCurrentWeather.getSys().getCountry() != null ) {
-
-             location = objCurrentWeather.getName() + "," + objCurrentWeather.getSys().getCountry();
-        }
-        else{
-
-            location = "No data";
-
-        }
-
-        return location;
-    }
-
-    public static String getCurrentTemp(CurrentWeather objCurrentWeather){
-        String currenttemp = "";
-
-        if (objCurrentWeather.getMain().getTemp() != null) {
-            currenttemp = objCurrentWeather.getMain().getTemp() + "";
-
-        } else {
-            //Toast.makeText(getApplicationContext(), "Sorry, Weather data not available. Technical error.", Toast.LENGTH_LONG).show();
-
-
-        }
-        return currenttemp;
-    }
-
-    public static Bitmap getWeatherIcon(CurrentWeather objCurrentWeather){
-
-        Bitmap bmWeathericon = null;
-
+    /**
+     * @param objCurrentWeather
+     * @return string icon. Validates for null exception and returns the icon ID.
+     */
+    public static String getIcon(CurrentWeather objCurrentWeather){
+        String icon = "";
         if (objCurrentWeather.getWeather().get(0).getIcon() != null) {
-            String icon = objCurrentWeather.getWeather().get(0).getIcon();
-            byte[] iconbytearray = Base64.decode(icon,0);
-            Bitmap bm = BitmapFactory.decodeByteArray(iconbytearray,0,iconbytearray.length);
-
-
-
+            icon = objCurrentWeather.getWeather().get(0).getIcon();
         } else  {
-            //Toast.makeText(getApplicationContext(), "Sorry, icon data not available. Technical error.", Toast.LENGTH_LONG).show();
-
-
+           icon = "N/A";
         }
-
-        return bmWeathericon;
-    }
-
-    public static String getDescription(CurrentWeather objCurrentWeather){
-        String description = "";
-
-        if (objCurrentWeather.getWeather().get(0).getDescription() != null) {
-
-            description = (objCurrentWeather.getWeather().get(0).getDescription());
-
-
-        } else  {
-            //Toast.makeText(getApplicationContext(), "Sorry, Weather data not fully available. Technical error.", Toast.LENGTH_LONG).show();
-
-
-        }
-        return description;
-    }
-
-    public static String getMinTemp(CurrentWeather objCurrentWeather){
-        String mintemp = "";
-        if (objCurrentWeather.getMain().getTemp_min() != null) {
-            mintemp = objCurrentWeather.getMain().getTemp_min() + "°F";
-
-
-        } else {
-            //Toast.makeText(getApplicationContext(), "Sorry, Minimum temperature data not available. Technical error.", Toast.LENGTH_LONG).show();
-
-        }
-        return mintemp;
-    }
-
-    public static String getMaxTemp(CurrentWeather objCurrentWeather){
-        String maxtemp = "";
-        if (objCurrentWeather.getMain().getTemp_max() != null) {
-
-            maxtemp = objCurrentWeather.getMain().getTemp_max() + "°F";
-
-
-        } else  {
-            //Toast.makeText(getApplicationContext(), "Sorry, Maximum temperature data not available. Technical error.", Toast.LENGTH_LONG).show();
-
-
-        }
-        return maxtemp;
-    }
-
-    public static String getWindSpeed(CurrentWeather objCurrentWeather){
-        String windspeed = "";
-
-        if (objCurrentWeather.getWind().getSpeed() != null) {
-            windspeed = objCurrentWeather.getWind().getSpeed() + "mph";
-        } else  {
-            //Toast.makeText(getApplicationContext(), "Sorry, Wind data not available. Technical error.", Toast.LENGTH_LONG).show();
-
-        }
-
-        return windspeed;
-    }
-    public static String getHumidityPercent(CurrentWeather objCurrentWeather){
-        String humidity = "";
-        if (objCurrentWeather.getMain().getHumidity() != null) {
-            humidity = objCurrentWeather.getMain().getHumidity() + "%";
-        } else  {
-            //Toast.makeText(getApplicationContext(), "Sorry, humidity data not available. Technical error.", Toast.LENGTH_LONG).show();
-        }
-        return humidity;
+        return icon;
     }
 
 }
